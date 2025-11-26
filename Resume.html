@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>S Anand | Portfolio & Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.12);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --card-bg: #0f172a;
+      --border-subtle: #1f2937;
+      --pill-bg: rgba(148, 163, 184, 0.12);
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+      --radius-xl: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 32px auto;
+      padding: 0 16px 32px;
+    }
+
+    /* Top Nav */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 15%, #a855f7, #4f46e5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 0 24px rgba(79, 70, 229, 0.6);
+    }
+
+    .nav-name {
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-tag {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .nav-cta {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.5);
+    }
+
+    /* Layout main */
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 860px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Card base */
+    .card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 20px 18px;
+      backdrop-filter: blur(14px);
+    }
+
+    /* Hero / Profile */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .hero-background {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.04), transparent 40%),
+        radial-gradient(circle at 80% 10%, rgba(79, 70, 229, 0.18), transparent 55%),
+        radial-gradient(circle at 10% 100%, rgba(236, 72, 153, 0.18), transparent 50%);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.5fr);
+      gap: 18px;
+      align-items: center;
+    }
+
+    @media (max-width: 720px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .tagline {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .role-line {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .role {
+      font-size: 14px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(129, 140, 248, 0.6);
+    }
+
+    .location {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .objective {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      max-width: 480px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .btn-primary {
+      padding: 7px 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #4f46e5, #22c55e);
+      color: white;
+      font-weight: 500;
+      box-shadow: 0 14px 35px rgba(34, 197, 94, 0.45);
+    }
+
+    .btn-ghost {
+      padding: 7px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      font-size: 12px;
+    }
+
+    @media (max-width: 720px) {
+      .hero-right {
+        align-items: flex-start;
+      }
+    }
+
+    .info-line {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(31, 41, 55, 0.8);
+    }
+
+    .info-label {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .info-value {
+      font-weight: 500;
+    }
+
+    .badge-year {
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid rgba(129, 140, 248, 0.6);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    /* Section headings */
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e, #4f46e5);
+      box-shadow: 0 0 16px rgba(34, 197, 94, 0.7);
+    }
+
+    .section-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    /* Education */
+    .timeline {
+      margin-top: 4px;
+      border-left: 1px dashed rgba(148, 163, 184, 0.4);
+      padding-left: 14px;
+    }
+
+    .timeline-item {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 2px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -17px;
+      top: 4px;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #4f46e5;
+      box-shadow: 0 0 14px rgba(79, 70, 229, 0.7);
+    }
+
+    .timeline-title {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .timeline-pill {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--pill-bg);
+    }
+
+    .timeline-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Skills */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--pill-bg);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .pill-strong {
+      border-color: rgba(129, 140, 248, 0.8);
+      background: rgba(79, 70, 229, 0.13);
+    }
+
+    .pill-soft {
+      border-style: dashed;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Right column widgets */
+    .mini-section {
+      margin-bottom: 14px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .contact-item {
+      padding: 7px 10px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .contact-label {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .contact-value {
+      font-weight: 500;
+    }
+
+    .lang-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    .lang-pill {
+      padding: 5px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* Certificates */
+    .cert-item {
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(107, 114, 128, 0.8);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 16px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Top nav -->
+    <header class="nav">
+      <div class="nav-left">
+        <div class="logo-circle" img= "C:\Full Stack\HTML - WEB\AS_PORTFOLIO\ANAND.jpeg">AS</div>
+        <div>
+          <div class="nav-name">S ANAND</div>
+          <div class="nav-tag">Portfolio & Resume</div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <div class="nav-chip">B.Tech CSE – AIML</div>
+        <button class="nav-cta" onclick="window.print()">Download / Print</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <!-- LEFT COLUMN -->
+      <section>
+        <!-- HERO / SUMMARY -->
+        <section class="card hero">
+          <div class="hero-background"></div>
+          <div class="hero-content">
+            <div>
+              <div class="tagline">Fast Learner | Web Developer | AIML</div>
+              <h1 class="name">S&nbsp;Anand</h1>
+              <div class="role-line">
+                <span class="role">B.Tech CSE – Artificial Intelligence &amp; Machine Learning</span>
+                <span class="location">Andhra Pradesh, India</span>
+              </div>
+              <p class="objective">
+                I’m a motivated 2<sup>nd</sup>-year B.Tech student who enjoys learning fast, working in teams,
+                and taking on new challenges. I’m especially interested in web development and AI/ML, and I’m
+                eager to contribute actively to club activities while continuously improving my technical and
+                soft skills.
+              </p>
+              <div class="hero-actions">
+                <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                  Contact Me
+                </button>
+                <button class="btn-ghost" onclick="document.getElementById('education').scrollIntoView({behavior:'smooth'})">
+                  View Education &amp; Skills
+                </button>
+              </div>
+            </div>
+
+            <div class="hero-right">
+              <div class="info-line">
+                <span class="info-label">Current Status</span>
+                <span class="info-value">B.Tech 2<sup>nd</sup> Year</span>
+              </div>
+              <div class="info-line">
+                <span class="info-label">1st Year CGPA</span>
+                <span class="info-value">9.32</span>
+              </div>
+              <span class="badge-year">Expected Graduation: 2028</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- EDUCATION & SKILLS -->
+        <section class="card" id="education">
+          <div class="section-title">
+            <span class="dot"></span>
+            <span>Education</span>
+          </div>
+          <p class="section-sub">
+            Strong academic foundation with consistent performance and interest in computer science.
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">
+                B.Tech in Computer Science and Engineering (CSE – AIML)
+              </div>
+              <div class="timeline-meta">
+                <span>Kalasalingam Academy of Research and Education, Tamil Nadu</span>
+                <span class="timeline-pill">2025 – Present</span>
+              </div>
+              <p class="timeline-desc">
+                Currently pursuing 2<sup>nd</sup> year, focusing on core CSE subjects along with
+                Artificial Intelligence and Machine Learning.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Higher Secondary (Class 12)</div>
+              <div class="timeline-meta">
+                <span>Kuppam Junior College, Andhra Pradesh</span>
+                <span class="timeline-pill">2024</span>
+              </div>
+              <p class="timeline-desc">
+                Completed Class 12 with a score of <strong>9.28%</strong>, building a strong
+                foundation in mathematics and science.
+              </p>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Secondary School (Class 10)</div>
+              <div class="timeline-meta">
+                <span>Montfort Centenary School, Andhra Pradesh</span>
+                <span class="timeline-pill">2022</span>
+              </div>
+              <p class="timeline-desc">
+                Secured <strong>84%</strong> in SSLC, with active interest in technology and
+                computers from school level.
+              </p>
+            </div>
+          </div>
+
+          <hr style="border: none; border-top: 1px dashed rgba(55,65,81,0.7); margin: 14px 0;" />
+
+          <div class="two-col">
+            <!-- Technical Skills -->
+            <div>
+              <div class="section-title">
+                <span class="dot"></span>
+                <span>Technical Skills</span>
+              </div>
+              <p class="section-sub">Programming &amp; technology interests.</p>
+              <div class="pill-row">
+                <span class="pill pill-strong">C</span>
+                <span class="pill pill-strong">Python</span>
+                <span class="pill pill-strong">Java (Basics)</span>
+                <span class="pill">Web Development (Learning)</span>
+                <span class="pill">Artificial Intelligence</span>
+                <span class="pill">Machine Learning</span>
+              </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div>
+              <div class="section-title">
+                <span class="dot"></span>
+                <span>Soft Skills</span>
+              </div>
+              <p class="section-sub">People &amp; personal effectiveness skills.</p>
+              <div class="pill-row">
+                <span class="pill pill-soft">Communication</span>
+                <span class="pill pill-soft">Team Collaboration</span>
+                <span class="pill pill-soft">Time Management</span>
+                <span class="pill pill-soft">Fast Learner</span>
+                <span class="pill pill-soft">Adaptability</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CERTIFICATES -->
+        <section class="card">
+          <div class="section-title">
+            <span class="dot"></span>
+            <span>Certificates</span>
+          </div>
+          <p class="section-sub">
+            Early steps into structured learning and technical upskilling.
+          </p>
+          <div class="cert-item">
+            <strong>Introduction to C</strong> – BRILLIANTS  
+            <br />
+            Built a strong foundation in C programming: syntax, control structures, and basic problem solving.
+          </div>
+        </section>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <aside>
+        <section class="card" id="contact">
+          <!-- CONTACT -->
+          <div class="mini-section">
+            <div class="section-title">
+              <span class="dot"></span>
+              <span>Contact</span>
+            </div>
+            <p class="section-sub">
+              Open to club activities, projects, and collaboration opportunities.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <div>
+                  <div class="contact-label">Phone</div>
+                  <div class="contact-value">+91 81063 10526</div>
+                </div>
+                <a href="tel:+918106310526" class="nav-cta" style="font-size: 11px; padding: 4px 10px;">
+                  Call
+                </a>
+              </div>
+
+              <div class="contact-item">
+                <div>
+                  <div class="contact-label">Email</div>
+                  <div class="contact-value">anand.57577@gmail.com</div>
+                </div>
+                <a href="mailto:anand.57577@gmail.com" class="btn-ghost" style="font-size: 11px; padding: 4px 10px;">
+                  Send Mail
+                </a>
+              </div>
+
+              <div class="contact-item">
+                <div>
+                  <div class="contact-label">Location</div>
+                  <div class="contact-value">Andhra Pradesh, India</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LANGUAGES -->
+          <div class="mini-section">
+            <div class="section-title">
+              <span class="dot"></span>
+              <span>Languages</span>
+            </div>
+            <div class="lang-row">
+              <span class="lang-pill">English</span>
+              <span class="lang-pill">Tamil</span>
+              <span class="lang-pill">Telugu</span>
+            </div>
+          </div>
+
+          <!-- OBJECTIVE / SUMMARY FOR CLIENT -->
+          <div class="mini-section">
+            <div class="section-title">
+              <span class="dot"></span>
+              <span>Why Work With Me?</span>
+            </div>
+            <p class="section-sub">
+              A brief summary for clubs, teams, or clients.
+            </p>
+            <p style="font-size: 12px; color: var(--text-muted);">
+              I bring enthusiasm, curiosity, and discipline to every project I join. I enjoy
+              collaborating with others, learning from seniors and peers, and taking ownership of
+              the tasks assigned to me. My goal is to grow along with the team and contribute with
+              both technical skills and a positive mindset.
+            </p>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      Designed as a web-based resume & portfolio for S Anand – B.Tech CSE (AIML).
+    </footer>
+  </div>
+</body>
+</html>

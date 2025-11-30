@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="C:\Full Stack\HTML - WEB\AS_PORTFOLIO\ANAND.jpeg">
+    </link>
+</head>
+
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .page {
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5)), url(tree1.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+
+    .logo {
+        display: flex;
+        position: absolute;
+        color: rgb(255, 102, 0);
+        width: 980px;
+        font-size: 50px;
+        padding-top: 40px;
+        margin-left: 40px;
+    }
+
+    ul {
+
+        position: absolute;
+        left: 120px;
+        top: 40px;
+        display: flex;
+        list-style-type: none;
+        overflow: hidden;
+        background-color: transparent;
+        width: 980px;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    ul li {
+        margin-left: 35px;
+        margin-top: 10px;
+        letter-spacing: 1.2px;
+        font-size: 14px;
+        padding: 22px;
+
+    }
+
+    ul li a {
+
+        text-decoration: none;
+        color: white;
+        font-family: 'Arial';
+        transition: 0.5s;
+    }
+
+    ul li a:hover {
+        color: rgb(255, 102, 0);
+        transition: 0.5s;
+
+    }
+
+    .search {
+        float: left;
+        position: relative;
+        left: 1000px;
+        top: 65px;
+        background: transparent;
+    }
+
+    .srch {
+        font-family: 'Times New Roman';
+        background: transparent;
+        border: 1px solid rgb(255, 102, 0);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-size: 20px;
+        color: white;
+
+    }
+
+    .btn {
+        position: relative;
+        right: 5px;
+        font-family: 'Times New Roman';
+        width: 100px;
+        background: rgb(255, 102, 0);
+        border: 1px solid rgb(255, 102, 0);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        color: white;
+        font-size: 20px;
+        transition: 0.5s;
+        cursor: pointer;
+
+
+
+    }
+
+    .btn:focus {
+        outline: none;
+
+    }
+
+    .btn:hover {
+        color: rgb(4, 124, 230);
+        background: white;
+        transition: 0.5s;
+
+    }
+
+    .sub {
+        width: 900px;
+        display: flex;
+        padding: 20px;
+        position: absolute;
+        top: 170px;
+        left: 60px;
+        line-height: 70px;
+        ;
+
+    }
+
+    .web {
+        color: white;
+        font-family: senrif;
+        font-size: 50px;
+    }
+
+    .dev {
+
+        color: rgb(255, 102, 0)
+    }
+
+    .btn1 {
+
+        position: absolute;
+        top: 430px;
+        left: 80px;
+        color: white;
+
+    }
+
+    .para {
+        letter-spacing: 1.2px;
+        line-height: 18px;
+        font-size: 16px;
+    }
+
+    .join {
+        text-decoration: none;
+        width: 15%;
+        height: 40px;
+        padding: 10px;
+        background: rgb(255, 102, 0);
+        border: none;
+        transition: 0.5s;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.8s;
+
+    }
+
+    .join a {
+        font-family: serif;
+        font: bold;
+        text-decoration: none;
+        color: rgb(10, 10, 10);
+
+    }
+
+    .join:hover {
+        color: rgb(255, 101, 0);
+        background: white;
+        transition: 0.5s;
+    }
+
+    .dash {
+        padding: 25px;
+        width: 250px;
+        height: 350px;
+        position: absolute;
+        top: 170px;
+        right: 80px;
+        border-radius: 10px;
+        ;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6)50%, rgba(0, 0, 0, 0.6)50%);
+    }
+
+    .dash h4 {
+        width: 220px;
+        text-align: center;
+        color: rgb(255, 102, 0);
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+        font-family: serif;
+        font-size: 22px;
+        border-radius: 10px;
+    }
+
+    .dash input {
+        font-size: 18px;
+        height: 15px;
+        color: white;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 5px;
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid rgb(255, 102, 0);
+
+    }
+
+    .login {
+        text-align: center;
+        width: 200px;
+        padding: 5px;
+        ;
+        background: rgb(255, 102, 0);
+        border: none;
+        color: black;
+        font-size: 18px;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: serif;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .login a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .login:hover {
+        background: white;
+        color: rgb(255, 102, 0);
+        transition: 0.5s;
+    }
+
+    .dash p {
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .forget {
+        text-decoration: none;
+        color: rgb(255, 102, 0);
+        transition: 0.5s;
+    }
+
+    .forget:hover {
+        text-decoration: underline;
+        color: white;
+        transition: 0.5s;
+    }
+    .icons a{
+        text-decoration: none;
+        color: white;
+    }
+    .icons ion-icon{
+        color:white;
+        margin-top:10px;
+        margin-left:5px;
+        padding: 5px;
+        font-size: 30px;
+        transition: 0.5s;
+
+}
+.icons ion-icon:hover{
+    color:rgb(255,102,0);
+    transition:0.5s;
+}
+</style>
+
+<body>
+    <div class="page">
+        <div class="main">
+            <div class="header">
+                <h1 class="logo">ParRoz</h1>
+            </div>
+            <ul>
+                <li><a href="#"> HOME</a></li>
+                <li><a href="#"> ABOUT</a></li>
+                <li><a href="#">SERVICE </a></li>
+                <li><a href="#">DESGIN</a></li>
+                <li><a href="#">CONTACT</a></li>
+
+            </ul>
+            <div class=search>
+                <input class="srch" type="text" placeholder="Enter your search here">
+                <button class="btn" type="submit"><a href="#"></a>Search</a></button>
+            </div>
+            <div class=" sub">
+                <h1 class="web">
+                    WEB DESIGN & <br> <span class="dev"> DEVELOPMENT</span> <br>COURSE
+                </h1>
+            </div>
+            <div class="btn1">
+                <p class="para">Focus in HTML/CSS refers to the moment when an element becomes active and ready for user
+                    interaction.<br>
+                    For example, when you click inside a text box or use the Tab key to move to a button or input
+                    field,<br>
+                    that element gains focus. A focused element can receive keyboard input, <br>
+
+                </p><br>
+                <button class="join"><a href="#"> JOIN US</a></button>
+            </div>
+            <div class="dash">
+                <h4>LOGIN HERE</h4>
+
+                <input type="email" placeholder="Enter Usetname" required></input><br>
+                <input type="password" placeholder="Enter Password" required></input><br>
+
+                <center><button class="login"><a href="#"> LOGIN</a></button></center>
+                <center>
+                    <p>Don't have an account</p>
+                </center>
+                <center><a href="#" class="forget">forgot password? </a></center>
+                <center>
+                    <p> Log in With</p>
+                </center>
+                <div class="icons">
+                    <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+</body>
+
+</html>

@@ -11,43 +11,43 @@
 
 <style>
     * {
-        margin: 0%;
-        padding: 0%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
     .page {
         width: 100%;
         height: 100vh;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.5)), url(tree1.jpg);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5)), url("tree1.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-
+        position: relative;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
     }
 
+    /* ---------- HEADER ---------- */
+
     .logo {
-        display: flex;
         position: absolute;
         color: rgb(255, 102, 0);
-        width: 980px;
         font-size: 50px;
-        padding-top: 40px;
-        margin-left: 40px;
+        top: 40px;
+        left: 40px;
     }
 
     ul {
-
         position: absolute;
         left: 120px;
         top: 40px;
         display: flex;
-        list-style-type: none;
-        overflow: hidden;
+        list-style: none;
         background-color: transparent;
         width: 980px;
         align-items: center;
         justify-content: center;
-
     }
 
     ul li {
@@ -56,45 +56,35 @@
         letter-spacing: 1.2px;
         font-size: 14px;
         padding: 22px;
-
     }
 
     ul li a {
-
         text-decoration: none;
         color: white;
-        font-family: 'Arial';
         transition: 0.5s;
     }
 
     ul li a:hover {
         color: rgb(255, 102, 0);
-        transition: 0.5s;
-
     }
 
     .search {
-        float: left;
-        position: relative;
+        position: absolute;
         left: 1000px;
         top: 65px;
-        background: transparent;
     }
 
     .srch {
-        font-family: 'Times New Roman';
         background: transparent;
         border: 1px solid rgb(255, 102, 0);
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        font-size: 20px;
+        font-size: 16px;
+        padding: 5px 8px;
         color: white;
-
     }
 
     .btn {
-        position: relative;
-        right: 5px;
         font-family: 'Times New Roman';
         width: 100px;
         background: rgb(255, 102, 0);
@@ -102,56 +92,40 @@
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         color: white;
-        font-size: 20px;
-        transition: 0.5s;
+        font-size: 16px;
         cursor: pointer;
-
-
-
-    }
-
-    .btn:focus {
-        outline: none;
-
+        padding: 5px 0;
+        transition: 0.5s;
     }
 
     .btn:hover {
         color: rgb(4, 124, 230);
         background: white;
-        transition: 0.5s;
-
     }
+
+    /* ---------- LEFT TEXT ---------- */
 
     .sub {
         width: 900px;
-        display: flex;
-        padding: 20px;
         position: absolute;
         top: 170px;
         left: 60px;
         line-height: 70px;
-        ;
-
     }
 
     .web {
-        color: white;
-        font-family: senrif;
         font-size: 50px;
     }
 
     .dev {
-
-        color: rgb(255, 102, 0)
+        color: rgb(255, 102, 0);
     }
 
     .btn1 {
-
         position: absolute;
         top: 430px;
         left: 80px;
         color: white;
-
     }
 
     .para {
@@ -161,33 +135,29 @@
     }
 
     .join {
-        text-decoration: none;
-        width: 15%;
-        height: 40px;
-        padding: 10px;
+        margin-top: 10px;
+        padding: 10px 20px;
         background: rgb(255, 102, 0);
         border: none;
-        transition: 0.5s;
         color: white;
         border-radius: 10px;
         cursor: pointer;
-        transition: 0.8s;
-
+        transition: 0.5s;
+        font-size: 16px;
     }
 
     .join a {
-        font-family: serif;
-        font: bold;
         text-decoration: none;
         color: rgb(10, 10, 10);
-
+        font-weight: bold;
     }
 
     .join:hover {
-        color: rgb(255, 101, 0);
         background: white;
-        transition: 0.5s;
+        color: rgb(255, 101, 0);
     }
+
+    /* ---------- LOGIN CARD ---------- */
 
     .dash {
         padding: 25px;
@@ -197,25 +167,23 @@
         top: 170px;
         right: 80px;
         border-radius: 10px;
-        ;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6)50%, rgba(0, 0, 0, 0.6)50%);
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.6) 50%,
+                rgba(0, 0, 0, 0.6) 50%);
     }
 
     .dash h4 {
-        width: 220px;
         text-align: center;
         color: rgb(255, 102, 0);
         background: white;
         padding: 10px;
         border-radius: 10px;
-        font-family: serif;
         font-size: 22px;
-        border-radius: 10px;
     }
 
     .dash input {
-        font-size: 18px;
-        height: 15px;
+        width: 100%;
+        font-size: 16px;
         color: white;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -223,21 +191,16 @@
         border: none;
         background: transparent;
         border-bottom: 1px solid rgb(255, 102, 0);
-
     }
 
     .login {
-        text-align: center;
-        width: 200px;
-        padding: 5px;
-        ;
+        width: 100%;
         background: rgb(255, 102, 0);
         border: none;
         color: black;
         font-size: 18px;
         border-radius: 10px;
         padding: 10px;
-        font-family: serif;
         cursor: pointer;
         transition: 0.5s;
     }
@@ -250,13 +213,13 @@
     .login:hover {
         background: white;
         color: rgb(255, 102, 0);
-        transition: 0.5s;
     }
 
     .dash p {
         color: white;
         margin-top: 10px;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .forget {
@@ -268,25 +231,100 @@
     .forget:hover {
         text-decoration: underline;
         color: white;
-        transition: 0.5s;
     }
-    .icons a{
-        text-decoration: none;
-        color: white;
-    }
-    .icons ion-icon{
-        color:white;
-        margin-top:10px;
-        margin-left:5px;
-        padding: 5px;
-        font-size: 30px;
-        transition: 0.5s;
 
-}
-.icons ion-icon:hover{
-    color:rgb(255,102,0);
-    transition:0.5s;
-}
+    .icons {
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .icons a {
+        text-decoration: none;
+    }
+
+    .icons ion-icon {
+        color: white;
+        margin: 5px;
+        font-size: 24px;
+        transition: 0.5s;
+    }
+
+    .icons ion-icon:hover {
+        color: rgb(255, 102, 0);
+    }
+
+    /* ---------- MOBILE VIEW ---------- */
+
+    @media (max-width: 768px) {
+
+        .page {
+            height: auto;
+            padding-bottom: 40px;
+        }
+
+        .logo {
+            position: static;
+            display: block;
+            font-size: 32px;
+            margin: 20px;
+        }
+
+        ul {
+            position: static;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        ul li {
+            padding: 10px;
+            margin: 0;
+        }
+
+        .search {
+            position: static;
+            margin: 0 auto 15px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sub {
+            position: static;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            padding: 0 20px;
+            line-height: 1.3;
+        }
+
+        .web {
+            font-size: 32px;
+            line-height: 1.3;
+        }
+
+        .btn1 {
+            position: static;
+            margin: 15px 20px;
+            text-align: center;
+        }
+
+        .para {
+            line-height: 1.4;
+        }
+
+        .join {
+            width: 60%;
+            max-width: 220px;
+        }
+
+        .dash {
+            position: static;
+            margin: 20px auto 0 auto;
+            width: 80%;
+            max-width: 320px;
+        }
+    }
 </style>
 
 <body>
